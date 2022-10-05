@@ -44,7 +44,7 @@ namespace ShveikaApp
         private void Card_DoubleClick(object sender, EventArgs e)
         {
             ProductCard card = sender as ProductCard;
-
+            
         }
 
         
