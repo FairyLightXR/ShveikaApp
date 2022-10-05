@@ -20,6 +20,7 @@ namespace ShveikaApp.Views.UserCtrl
 
        public void GenerateProductCard(Product prod)
         {
+            IDLbl.Text = prod.ProductArticleNumber;
             TitleLbl.Text = prod.ProductName;
             DescrTxt.Text = prod.ProductDescription;
             CostLbl.Text = $"{Math.Round(prod.ProductCost, 2)} руб";

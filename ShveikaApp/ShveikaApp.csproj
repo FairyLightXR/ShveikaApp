@@ -109,6 +109,13 @@
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.Order.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.OrderPickupPoint.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.Product.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.Role.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.ShveModel.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.Supplier.datasource" />
+    <None Include="Properties\DataSources\ShveikaApp.Model.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,9 +129,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>

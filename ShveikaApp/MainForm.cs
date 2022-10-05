@@ -1,5 +1,6 @@
 ﻿using ShveikaApp.Model;
 using ShveikaApp.Utils;
+using ShveikaApp.Views;
 using ShveikaApp.Views.UserCtrl;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,8 @@ namespace ShveikaApp
         private void Card_DoubleClick(object sender, EventArgs e)
         {
             ProductCard card = sender as ProductCard;
+            AddEditForm edd = new AddEditForm(DbContext.Context.Product.First(puk => puk.ProductArticleNumber == card.IDLbl.Text));
+            DialogResult dr = edd.ShowDialog();
             
         }
 
@@ -91,7 +94,8 @@ namespace ShveikaApp
 
             }
             #endregion
-            
+
+            ProdCountLbl.Text = ListUpdate.Count + " из " + products.Count.ToString();
             GenerateProductsCards(ListUpdate);
         }
 
