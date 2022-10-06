@@ -124,13 +124,15 @@
             // 
             // DescrTxt
             // 
+            this.DescrTxt.BackColor = System.Drawing.Color.White;
             this.DescrTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescrTxt.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DescrTxt.Location = new System.Drawing.Point(276, 48);
             this.DescrTxt.Multiline = true;
             this.DescrTxt.Name = "DescrTxt";
+            this.DescrTxt.ReadOnly = true;
             this.DescrTxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DescrTxt.Size = new System.Drawing.Size(326, 51);
+            this.DescrTxt.Size = new System.Drawing.Size(331, 51);
             this.DescrTxt.TabIndex = 2;
             // 
             // ProductCard

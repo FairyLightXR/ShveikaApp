@@ -70,8 +70,8 @@ namespace ShveikaApp.Views
                 index = file.IndexOf("Products");
                 productPhotoPictureBox.ImageLocation = $@"{file.Substring(index)}";
                 file = file.Substring(index+9);
-                product.ProductPhoto = file;
-
+                ((Product)productBindingSource.Current).ProductPhoto = file;
+               
             }
         }
 
@@ -79,16 +79,25 @@ namespace ShveikaApp.Views
         {
             if (productArticleNumberTextBox.Enabled)
             {
-                foreach ( var item in )
-                {
+                bool findArticle = false;
 
+                foreach (var item in DbContext.Context.Product.ToList())
+                {
+                    findArticle = item.ProductArticleNumber.ToLower() == ((Product)productBindingSource.Current).ProductArticleNumber.ToLower() ? true : false;
+
+                    if (findArticle)
+                    {
+                        break;
+                    }
+                    
                 }
-                if (DbContext.Context.Product.First( a => a.ProductArticleNumber.ToLower() == ((Product)productBindingSource.Current).ProductArticleNumber.ToLower()) !=null )
+                if (findArticle)
                 {
                     MessageBox.Show("Текущий артикул существует");
                     return;
                 }
-                productBindingSource.Add(product);
+
+                DbContext.Context.Product.Add((Product)productBindingSource.Current);
             }
             if (product.ProductPhoto == $@"..\..\Images\picture.png")
             {
@@ -97,7 +106,9 @@ namespace ShveikaApp.Views
 
             try
             {
-              DbContext.Context.SaveChanges();
+                
+                
+                DbContext.Context.SaveChanges();
                 MessageBox.Show("Сохранение прошло успешно!", "Сохранение продукта");
                 DialogResult = DialogResult.OK;
             }
@@ -111,6 +122,26 @@ namespace ShveikaApp.Views
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+          DialogResult dr = MessageBox.Show("Вы уверены, что хотите удалить выбранный продукт?", "Удаление продукта", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    DbContext.Context.Product.Remove(product);
+                    DbContext.Context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+                
+            }
+            DialogResult = DialogResult.OK;
         }
     }
 }

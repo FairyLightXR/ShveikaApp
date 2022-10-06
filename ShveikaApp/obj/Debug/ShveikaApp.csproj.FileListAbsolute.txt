@@ -50,3 +50,4 @@ C:\Users\315\Desktop\Вариант задания 9\ShveikaApp\ShveikaApp\bin\D
 C:\Users\315\Desktop\Вариант задания 9\ShveikaApp\ShveikaApp\bin\Debug\EntityFramework.xml
 C:\Users\315\Desktop\Вариант задания 9\ShveikaApp\ShveikaApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\315\Desktop\Вариант задания 9\ShveikaApp\ShveikaApp\obj\Debug\ShveikaApp.csproj.CopyComplete
+C:\Users\315\Desktop\Вариант задания 9\ShveikaApp\ShveikaApp\obj\Debug\ShveikaApp.Views.AuthForm.resources

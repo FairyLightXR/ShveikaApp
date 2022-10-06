@@ -98,7 +98,7 @@ namespace ShveikaApp
             }
             #endregion
 
-            ProdCountLbl.Text = ListUpdate.Count + " из " + products.Count.ToString();
+            ProdCountLbl.Text = ListUpdate.Count + " из " + DbContext.Context.Product.Count().ToString();
             GenerateProductsCards(ListUpdate);
         }
 
@@ -143,5 +143,7 @@ namespace ShveikaApp
         {
 
         }
+
+       
     }
 }
