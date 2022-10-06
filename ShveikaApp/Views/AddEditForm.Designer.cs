@@ -42,6 +42,7 @@
             System.Windows.Forms.Label productSupplierIDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditForm));
             this.productArticleNumberTextBox = new System.Windows.Forms.TextBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productCategoryTextBox = new System.Windows.Forms.TextBox();
             this.productCostTextBox = new System.Windows.Forms.TextBox();
             this.productDescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -53,13 +54,14 @@
             this.productPhotoPictureBox = new System.Windows.Forms.PictureBox();
             this.productQuantityInStockTextBox = new System.Windows.Forms.TextBox();
             this.productSupplierIDComboBox = new System.Windows.Forms.ComboBox();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ImagePicBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             productArticleNumberLabel = new System.Windows.Forms.Label();
             productCategoryLabel = new System.Windows.Forms.Label();
             productCostLabel = new System.Windows.Forms.Label();
@@ -71,11 +73,12 @@
             productNameLabel = new System.Windows.Forms.Label();
             productQuantityInStockLabel = new System.Windows.Forms.Label();
             productSupplierIDLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // productArticleNumberLabel
@@ -87,15 +90,6 @@
             productArticleNumberLabel.TabIndex = 1;
             productArticleNumberLabel.Text = "Артикул продукта:";
             // 
-            // productArticleNumberTextBox
-            // 
-            this.productArticleNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductArticleNumber", true));
-            this.productArticleNumberTextBox.Enabled = false;
-            this.productArticleNumberTextBox.Location = new System.Drawing.Point(354, 161);
-            this.productArticleNumberTextBox.Name = "productArticleNumberTextBox";
-            this.productArticleNumberTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productArticleNumberTextBox.TabIndex = 2;
-            // 
             // productCategoryLabel
             // 
             productCategoryLabel.AutoSize = true;
@@ -104,14 +98,6 @@
             productCategoryLabel.Size = new System.Drawing.Size(137, 18);
             productCategoryLabel.TabIndex = 3;
             productCategoryLabel.Text = "Категория продукта:";
-            // 
-            // productCategoryTextBox
-            // 
-            this.productCategoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductCategory", true));
-            this.productCategoryTextBox.Location = new System.Drawing.Point(199, 238);
-            this.productCategoryTextBox.Name = "productCategoryTextBox";
-            this.productCategoryTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productCategoryTextBox.TabIndex = 4;
             // 
             // productCostLabel
             // 
@@ -122,14 +108,6 @@
             productCostLabel.TabIndex = 5;
             productCostLabel.Text = "Цена продукта:";
             // 
-            // productCostTextBox
-            // 
-            this.productCostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductCost", true));
-            this.productCostTextBox.Location = new System.Drawing.Point(199, 269);
-            this.productCostTextBox.Name = "productCostTextBox";
-            this.productCostTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productCostTextBox.TabIndex = 6;
-            // 
             // productDescriptionLabel
             // 
             productDescriptionLabel.AutoSize = true;
@@ -138,15 +116,6 @@
             productDescriptionLabel.Size = new System.Drawing.Size(135, 18);
             productDescriptionLabel.TabIndex = 7;
             productDescriptionLabel.Text = "Описание продукта:";
-            // 
-            // productDescriptionTextBox
-            // 
-            this.productDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductDescription", true));
-            this.productDescriptionTextBox.Location = new System.Drawing.Point(199, 300);
-            this.productDescriptionTextBox.Multiline = true;
-            this.productDescriptionTextBox.Name = "productDescriptionTextBox";
-            this.productDescriptionTextBox.Size = new System.Drawing.Size(206, 62);
-            this.productDescriptionTextBox.TabIndex = 8;
             // 
             // productDiscountAmountLabel
             // 
@@ -157,14 +126,6 @@
             productDiscountAmountLabel.TabIndex = 9;
             productDiscountAmountLabel.Text = "Размер скидки продукта:";
             // 
-            // productDiscountAmountTextBox
-            // 
-            this.productDiscountAmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductDiscountAmount", true));
-            this.productDiscountAmountTextBox.Location = new System.Drawing.Point(199, 374);
-            this.productDiscountAmountTextBox.Name = "productDiscountAmountTextBox";
-            this.productDiscountAmountTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productDiscountAmountTextBox.TabIndex = 10;
-            // 
             // productManufacturerLabel
             // 
             productManufacturerLabel.AutoSize = true;
@@ -173,14 +134,6 @@
             productManufacturerLabel.Size = new System.Drawing.Size(172, 18);
             productManufacturerLabel.TabIndex = 11;
             productManufacturerLabel.Text = "Производитель продукта:";
-            // 
-            // productManufacturerTextBox
-            // 
-            this.productManufacturerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductManufacturer", true));
-            this.productManufacturerTextBox.Location = new System.Drawing.Point(199, 407);
-            this.productManufacturerTextBox.Name = "productManufacturerTextBox";
-            this.productManufacturerTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productManufacturerTextBox.TabIndex = 12;
             // 
             // productMaxDiscountLabel
             // 
@@ -191,14 +144,6 @@
             productMaxDiscountLabel.TabIndex = 13;
             productMaxDiscountLabel.Text = "Максимальная скидка:";
             // 
-            // productMaxDiscountTextBox
-            // 
-            this.productMaxDiscountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductMaxDiscount", true));
-            this.productMaxDiscountTextBox.Location = new System.Drawing.Point(199, 439);
-            this.productMaxDiscountTextBox.Name = "productMaxDiscountTextBox";
-            this.productMaxDiscountTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productMaxDiscountTextBox.TabIndex = 14;
-            // 
             // productMeasureLabel
             // 
             productMeasureLabel.AutoSize = true;
@@ -207,14 +152,6 @@
             productMeasureLabel.Size = new System.Drawing.Size(137, 18);
             productMeasureLabel.TabIndex = 15;
             productMeasureLabel.Text = "Единица измерения:";
-            // 
-            // productMeasureTextBox
-            // 
-            this.productMeasureTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductMeasure", true));
-            this.productMeasureTextBox.Location = new System.Drawing.Point(199, 475);
-            this.productMeasureTextBox.Name = "productMeasureTextBox";
-            this.productMeasureTextBox.Size = new System.Drawing.Size(121, 26);
-            this.productMeasureTextBox.TabIndex = 16;
             // 
             // productNameLabel
             // 
@@ -225,12 +162,100 @@
             productNameLabel.TabIndex = 17;
             productNameLabel.Text = "Название продукта:";
             // 
+            // productQuantityInStockLabel
+            // 
+            productQuantityInStockLabel.AutoSize = true;
+            productQuantityInStockLabel.Location = new System.Drawing.Point(20, 512);
+            productQuantityInStockLabel.Name = "productQuantityInStockLabel";
+            productQuantityInStockLabel.Size = new System.Drawing.Size(127, 18);
+            productQuantityInStockLabel.TabIndex = 21;
+            productQuantityInStockLabel.Text = "Остаток на складе:";
+            // 
+            // productSupplierIDLabel
+            // 
+            productSupplierIDLabel.AutoSize = true;
+            productSupplierIDLabel.Location = new System.Drawing.Point(20, 547);
+            productSupplierIDLabel.Name = "productSupplierIDLabel";
+            productSupplierIDLabel.Size = new System.Drawing.Size(134, 18);
+            productSupplierIDLabel.TabIndex = 23;
+            productSupplierIDLabel.Text = "Product Supplier ID:";
+            // 
+            // productArticleNumberTextBox
+            // 
+            this.productArticleNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductArticleNumber", true));
+            this.productArticleNumberTextBox.Enabled = false;
+            this.productArticleNumberTextBox.Location = new System.Drawing.Point(354, 161);
+            this.productArticleNumberTextBox.Name = "productArticleNumberTextBox";
+            this.productArticleNumberTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productArticleNumberTextBox.TabIndex = 2;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(ShveikaApp.Model.Product);
+            // 
+            // productCategoryTextBox
+            // 
+            this.productCategoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductCategory", true));
+            this.productCategoryTextBox.Location = new System.Drawing.Point(199, 238);
+            this.productCategoryTextBox.Name = "productCategoryTextBox";
+            this.productCategoryTextBox.Size = new System.Drawing.Size(206, 26);
+            this.productCategoryTextBox.TabIndex = 4;
+            // 
+            // productCostTextBox
+            // 
+            this.productCostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductCost", true));
+            this.productCostTextBox.Location = new System.Drawing.Point(199, 269);
+            this.productCostTextBox.Name = "productCostTextBox";
+            this.productCostTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productCostTextBox.TabIndex = 6;
+            // 
+            // productDescriptionTextBox
+            // 
+            this.productDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductDescription", true));
+            this.productDescriptionTextBox.Location = new System.Drawing.Point(199, 300);
+            this.productDescriptionTextBox.Multiline = true;
+            this.productDescriptionTextBox.Name = "productDescriptionTextBox";
+            this.productDescriptionTextBox.Size = new System.Drawing.Size(206, 62);
+            this.productDescriptionTextBox.TabIndex = 8;
+            // 
+            // productDiscountAmountTextBox
+            // 
+            this.productDiscountAmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductDiscountAmount", true));
+            this.productDiscountAmountTextBox.Location = new System.Drawing.Point(199, 374);
+            this.productDiscountAmountTextBox.Name = "productDiscountAmountTextBox";
+            this.productDiscountAmountTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productDiscountAmountTextBox.TabIndex = 10;
+            // 
+            // productManufacturerTextBox
+            // 
+            this.productManufacturerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductManufacturer", true));
+            this.productManufacturerTextBox.Location = new System.Drawing.Point(199, 407);
+            this.productManufacturerTextBox.Name = "productManufacturerTextBox";
+            this.productManufacturerTextBox.Size = new System.Drawing.Size(206, 26);
+            this.productManufacturerTextBox.TabIndex = 12;
+            // 
+            // productMaxDiscountTextBox
+            // 
+            this.productMaxDiscountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductMaxDiscount", true));
+            this.productMaxDiscountTextBox.Location = new System.Drawing.Point(199, 439);
+            this.productMaxDiscountTextBox.Name = "productMaxDiscountTextBox";
+            this.productMaxDiscountTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productMaxDiscountTextBox.TabIndex = 14;
+            // 
+            // productMeasureTextBox
+            // 
+            this.productMeasureTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductMeasure", true));
+            this.productMeasureTextBox.Location = new System.Drawing.Point(199, 475);
+            this.productMeasureTextBox.Name = "productMeasureTextBox";
+            this.productMeasureTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productMeasureTextBox.TabIndex = 16;
+            // 
             // productNameTextBox
             // 
             this.productNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductName", true));
             this.productNameTextBox.Location = new System.Drawing.Point(199, 203);
             this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.Size = new System.Drawing.Size(121, 26);
+            this.productNameTextBox.Size = new System.Drawing.Size(206, 26);
             this.productNameTextBox.TabIndex = 18;
             // 
             // productPhotoPictureBox
@@ -243,15 +268,6 @@
             this.productPhotoPictureBox.TabIndex = 20;
             this.productPhotoPictureBox.TabStop = false;
             // 
-            // productQuantityInStockLabel
-            // 
-            productQuantityInStockLabel.AutoSize = true;
-            productQuantityInStockLabel.Location = new System.Drawing.Point(20, 512);
-            productQuantityInStockLabel.Name = "productQuantityInStockLabel";
-            productQuantityInStockLabel.Size = new System.Drawing.Size(127, 18);
-            productQuantityInStockLabel.TabIndex = 21;
-            productQuantityInStockLabel.Text = "Остаток на складе:";
-            // 
             // productQuantityInStockTextBox
             // 
             this.productQuantityInStockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductQuantityInStock", true));
@@ -259,15 +275,6 @@
             this.productQuantityInStockTextBox.Name = "productQuantityInStockTextBox";
             this.productQuantityInStockTextBox.Size = new System.Drawing.Size(121, 26);
             this.productQuantityInStockTextBox.TabIndex = 22;
-            // 
-            // productSupplierIDLabel
-            // 
-            productSupplierIDLabel.AutoSize = true;
-            productSupplierIDLabel.Location = new System.Drawing.Point(20, 547);
-            productSupplierIDLabel.Name = "productSupplierIDLabel";
-            productSupplierIDLabel.Size = new System.Drawing.Size(134, 18);
-            productSupplierIDLabel.TabIndex = 23;
-            productSupplierIDLabel.Text = "Product Supplier ID:";
             // 
             // productSupplierIDComboBox
             // 
@@ -280,10 +287,6 @@
             this.productSupplierIDComboBox.Size = new System.Drawing.Size(121, 26);
             this.productSupplierIDComboBox.TabIndex = 24;
             this.productSupplierIDComboBox.ValueMember = "ID";
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(ShveikaApp.Model.Product);
             // 
             // supplierBindingSource
             // 
@@ -314,25 +317,6 @@
             this.panel1.Size = new System.Drawing.Size(748, 128);
             this.panel1.TabIndex = 26;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 588);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(748, 69);
-            this.panel2.TabIndex = 27;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -344,10 +328,58 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ИС \"Швейка\"";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.CancelBtn);
+            this.panel2.Controls.Add(this.SaveBtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 588);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(748, 69);
+            this.panel2.TabIndex = 27;
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(205)))));
+            this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.ForeColor = System.Drawing.Color.White;
+            this.CancelBtn.Location = new System.Drawing.Point(561, 20);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(111, 37);
+            this.CancelBtn.TabIndex = 25;
+            this.CancelBtn.Text = "Отмена";
+            this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(205)))));
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(36, 20);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(111, 37);
+            this.SaveBtn.TabIndex = 25;
+            this.SaveBtn.Text = "Сохранить";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // AddEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(748, 657);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -381,12 +413,13 @@
             this.Name = "AddEditForm";
             this.Text = "Форма изменения и добавления продуктов ИС \"Швейка\"";
             this.Load += new System.EventHandler(this.AddEditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +446,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }

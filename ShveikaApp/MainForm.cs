@@ -47,7 +47,10 @@ namespace ShveikaApp
             ProductCard card = sender as ProductCard;
             AddEditForm edd = new AddEditForm(DbContext.Context.Product.First(puk => puk.ProductArticleNumber == card.IDLbl.Text));
             DialogResult dr = edd.ShowDialog();
-            
+            if (dr == DialogResult.OK)
+            {
+                SearchFiltrSort();
+            }
         }
 
         
@@ -127,6 +130,12 @@ namespace ShveikaApp
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            AddEditForm add = new AddEditForm(null);
+            DialogResult result = add.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                SearchFiltrSort();
+            }
 
         }
 
