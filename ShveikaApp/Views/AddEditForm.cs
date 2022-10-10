@@ -20,11 +20,6 @@ namespace ShveikaApp.Views
         public AddEditForm(Product current)
         {
             InitializeComponent();
-            if (current != null)
-            {
-                product = current;
-
-            }
         }
 
         private void AddEditForm_Load(object sender, EventArgs e)
@@ -34,26 +29,25 @@ namespace ShveikaApp.Views
             
             if (product == null)
             {
-                productBindingSource.AddNew();
-                product = new Product();
+                
+                product = new Product()
+                {
+                    ProductPhoto = $@"..\..\Images\picture.png"
+                };
                 productArticleNumberTextBox.Enabled = true;
             }
             else
             {
-                productBindingSource.Add(product);
-                if (product.ProductPhoto.Length > 0)
+              
+                if (product.ProductPhoto.Length == 0)
                 {
                     
-                    productPhotoPictureBox.ImageLocation = $@".\Products\" + product.ProductPhoto;
-                }
-                else
-                {
                     product.ProductPhoto = $@"..\..\Images\picture.png";
                     productPhotoPictureBox.ImageLocation = product.ProductPhoto;
                 }
-
                 product.ProductCost = Math.Round(product.ProductCost, 2);
             }
+            productBindingSource.Add(product);
         }
 
         private void ImagePicBtn_Click(object sender, EventArgs e)

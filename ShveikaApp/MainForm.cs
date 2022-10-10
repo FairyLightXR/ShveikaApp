@@ -17,6 +17,7 @@ namespace ShveikaApp
     public partial class MainForm : Form
     {
         List<Product> products = new List<Product>();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -27,6 +28,20 @@ namespace ShveikaApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (CurrentUser.UserCurrent != null)
+            {
+                if (CurrentUser.UserCurrent.UserRole == 3)
+                {
+                    AddBtn.Visible = true;
+                    
+                }
+                UserCredentialsLbl.Text = $"{CurrentUser.UserCurrent.UserSurname} {CurrentUser.UserCurrent.UserName} {CurrentUser.UserCurrent.UserPatronymic}" ;
+            }
+            else
+            {
+                UserCredentialsLbl.Text = "Гость";
+            }
+
             GenerateProductsCards(products);
         }
         public void GenerateProductsCards(List<Product> products)
@@ -44,13 +59,23 @@ namespace ShveikaApp
 
         private void Card_DoubleClick(object sender, EventArgs e)
         {
-            ProductCard card = sender as ProductCard;
-            AddEditForm edd = new AddEditForm(DbContext.Context.Product.First(puk => puk.ProductArticleNumber == card.IDLbl.Text));
-            DialogResult dr = edd.ShowDialog();
-            if (dr == DialogResult.OK)
+
+            if (CurrentUser.UserCurrent != null)
             {
-                SearchFiltrSort();
+                if (CurrentUser.UserCurrent.UserRole == 3)
+                {
+                    ProductCard card = sender as ProductCard;
+                    AddEditForm edd = new AddEditForm(DbContext.Context.Product.First(puk => puk.ProductArticleNumber == card.IDLbl.Text));
+                    DialogResult dr = edd.ShowDialog();
+                    if (dr == DialogResult.OK)
+                    {
+                        SearchFiltrSort();
+                    }
+                }
             }
+                
+            
+            
         }
 
         
@@ -141,7 +166,10 @@ namespace ShveikaApp
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
-
+            AuthForm auth = new AuthForm();
+            auth.Show();
+            this.Close();
+            CurrentUser.UserCurrent = null;
         }
 
        

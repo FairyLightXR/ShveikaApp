@@ -123,10 +123,12 @@
             // UserCredentialsLbl
             // 
             this.UserCredentialsLbl.AutoSize = true;
+            this.UserCredentialsLbl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.UserCredentialsLbl.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserCredentialsLbl.ForeColor = System.Drawing.Color.White;
-            this.UserCredentialsLbl.Location = new System.Drawing.Point(548, 18);
+            this.UserCredentialsLbl.Location = new System.Drawing.Point(595, 0);
             this.UserCredentialsLbl.Name = "UserCredentialsLbl";
-            this.UserCredentialsLbl.Size = new System.Drawing.Size(33, 18);
+            this.UserCredentialsLbl.Size = new System.Drawing.Size(49, 26);
             this.UserCredentialsLbl.TabIndex = 3;
             this.UserCredentialsLbl.Text = "FIO";
             // 
@@ -189,7 +191,7 @@
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BottomPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 504);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 527);
             this.BottomPanel.Name = "BottomPanel";
             this.BottomPanel.Size = new System.Drawing.Size(1031, 100);
             this.BottomPanel.TabIndex = 1;
@@ -218,6 +220,7 @@
             this.AddBtn.TabIndex = 0;
             this.AddBtn.Text = "Добавить";
             this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Visible = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // CenterPanel
@@ -226,7 +229,7 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(0, 114);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1031, 390);
+            this.CenterPanel.Size = new System.Drawing.Size(1031, 413);
             this.CenterPanel.TabIndex = 2;
             // 
             // ProdLayoutPanel
@@ -236,14 +239,14 @@
             this.ProdLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.ProdLayoutPanel.Name = "ProdLayoutPanel";
-            this.ProdLayoutPanel.Size = new System.Drawing.Size(1031, 390);
+            this.ProdLayoutPanel.Size = new System.Drawing.Size(1031, 413);
             this.ProdLayoutPanel.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 604);
+            this.ClientSize = new System.Drawing.Size(1031, 627);
             this.ControlBox = false;
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.BottomPanel);
@@ -275,7 +278,6 @@
         private System.Windows.Forms.Label CompanyTitleLbl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel BottomPanel;
-        private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Panel CenterPanel;
         private System.Windows.Forms.FlowLayoutPanel ProdLayoutPanel;
         private System.Windows.Forms.Panel TopRightPanel;
@@ -283,7 +285,8 @@
         private System.Windows.Forms.CheckBox DescChk;
         private System.Windows.Forms.ComboBox FiltrCmb;
         private System.Windows.Forms.ComboBox Sortcmb;
-        private System.Windows.Forms.Button LogoutBtn;
+        public System.Windows.Forms.Button AddBtn;
+        public System.Windows.Forms.Button LogoutBtn;
     }
 }
 
